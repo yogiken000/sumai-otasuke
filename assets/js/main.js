@@ -73,7 +73,7 @@ $(function () {
 	});
 
 	/*初期表示*/
-	// $('.ChangeElem_Panel').hide();
+	$('.ChangeElem_Panel').hide();
 	/*クリックイベント*/
 	$('.ChangeElem_Btn').each(function () {
 		$(this).on('click', function () {
