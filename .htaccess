@@ -1,0 +1,12 @@
+SetEnvIf Request_URI ".*" Ngx_Cache_NoCacheMode=off
+SetEnvIf Request_URI ".*" Ngx_Cache_StaticMode
+
+
+AuthType Basic
+AuthName "Input your ID and Password."
+AuthUserFile /home/mhands/sumai-otasuke.com/public_html/.htpasswd
+require valid-user
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
